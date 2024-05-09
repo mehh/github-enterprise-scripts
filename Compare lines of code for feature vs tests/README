@@ -1,0 +1,41 @@
+# Repository Analysis Script
+
+This is a Node.js script that uses the GitHub API to analyze pull requests in specified repositories. It calculates the number of test and non-test files updated, the total changes made to these files, and the average changes per pull request.
+
+## Dependencies
+
+This script requires Node.js and the `@octokit/core` package. You can install the package with the following command:
+
+```bash
+npm install @octokit/core
+```
+
+## Usage
+
+To use this script, you need to replace the `auth` token in the `Octokit` instance with your own GitHub personal access token.
+
+The script analyzes the repositories specified in the `repos` array. You can add more repositories to this array as needed.
+
+To run the script, use the following command:
+
+```bash
+node script.js
+```
+
+## Output
+
+The script outputs the following information for each repository:
+
+- Total number of pull requests analyzed
+- Total number of test file updates
+- Total number of non-test file updates
+- Average test changes (lines) per pull request
+- Average non-test changes (lines) per pull request
+
+## Note
+
+The script currently analyzes pull requests created between May 1, 2024, and May 7, 2024. You can adjust these dates by changing the `startDate` and `endDate` variables.
+
+## Disclaimer
+
+This script uses a GitHub personal access token to authenticate with the GitHub API. Be careful not to expose your token in public repositories, as it could be used to perform actions on your behalf.

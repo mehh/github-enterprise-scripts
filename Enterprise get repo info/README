@@ -1,0 +1,46 @@
+# GitHub Organization Repository Fetcher
+
+This is a Node.js script that uses the GitHub API to fetch information about all repositories in specified organizations and writes the data to a CSV file.
+
+## Dependencies
+
+This script requires Node.js and the following npm packages:
+
+- `@octokit/core`
+- `csv-writer`
+
+You can install these packages with the following command:
+
+```bash
+npm install @octokit/core csv-writer
+```
+
+## Usage
+
+To use this script, you need to replace the `auth` token in the `Octokit` instance with your own GitHub personal access token.
+
+The script fetches data for the organizations specified in the `orgs` array. You can add more organizations to this array as needed.
+
+To run the script, use the following command:
+
+```bash
+node script.js
+```
+
+## Output
+
+The script writes the fetched data to a CSV file named `github-repos.csv`. The CSV file includes the following columns:
+
+- ORG: The organization name
+- DESCRIPTION: The repository description
+- URL: The URL of the repository
+- FULL_NAME: The full name of the repository
+- NAME: The repository name
+- CREATED_AT: The date and time when the repository was created
+- PUSHED_AT: The date and time when the last push was made to the repository
+- UPDATED_AT: The date and time when the repository was last updated
+- ARCHIVED: Whether the repository is archived
+
+## Note
+
+This script uses a GitHub personal access token to authenticate with the GitHub API. Be careful not to expose your token in public repositories, as it could be used to perform actions on your behalf.
